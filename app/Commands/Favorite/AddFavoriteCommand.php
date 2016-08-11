@@ -10,7 +10,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Hifone\Commands\Favorite;
 
 final class AddFavoriteCommand

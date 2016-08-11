@@ -10,7 +10,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Hifone\Models;
 
 use Hifone\Models\Scopes\Recent;
