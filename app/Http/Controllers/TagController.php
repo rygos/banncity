@@ -13,7 +13,6 @@ namespace Hifone\Http\Controllers;
 
 use Hifone\Models\Tag;
 use Illuminate\Support\Facades\Config;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class TagController extends Controller
 {
