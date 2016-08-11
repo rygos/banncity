@@ -10,7 +10,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Hifone\Handlers\Commands\Reply;
 
 use Hifone\Commands\Reply\RemoveReplyCommand;

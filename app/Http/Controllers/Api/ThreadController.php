@@ -10,7 +10,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Hifone\Http\Controllers\Api;
 
 use Hifone\Models\Thread;
