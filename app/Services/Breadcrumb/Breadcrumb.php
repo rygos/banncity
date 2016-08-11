@@ -10,7 +10,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Hifone\Services\Breadcrumb;
 
 class Breadcrumb implements \Countable
