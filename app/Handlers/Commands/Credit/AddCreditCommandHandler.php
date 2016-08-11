@@ -3,11 +3,13 @@
 /*
  * This file is part of Hifone.
  *
- * (c) Hifone.com <hifone@hifone.com>
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Hifone\Handlers\Commands\Credit;
 
@@ -47,7 +49,7 @@ class AddCreditCommandHandler
     {
         $credit_rule = CreditRule::whereSlug($command->action)->first();
 
-        if (!$credit_rule || !$this->checkFrequency($credit_rule, $command->user)) {
+        if (! $credit_rule || ! $this->checkFrequency($credit_rule, $command->user)) {
             return;
         }
 
@@ -69,7 +71,7 @@ class AddCreditCommandHandler
 
     protected function checkFrequency(CreditRule $credit_rule, \Hifone\Models\User $user)
     {
-        if (!in_array($credit_rule->frequency, [CreditRule::DAILY, CreditRule::ONCE])) {
+        if (! in_array($credit_rule->frequency, [CreditRule::DAILY, CreditRule::ONCE])) {
             return true;
         }
 
@@ -81,6 +83,6 @@ class AddCreditCommandHandler
             }
         })->count();
 
-        return !$count;
+        return ! $count;
     }
 }

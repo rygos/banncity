@@ -3,11 +3,13 @@
 /*
  * This file is part of Hifone.
  *
- * (c) Hifone.com <hifone@hifone.com>
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Hifone\Http\Controllers\Api;
 
@@ -189,7 +191,7 @@ abstract class AbstractApiController extends Controller
      */
     protected function respond()
     {
-        if (!empty($this->meta)) {
+        if (! empty($this->meta)) {
             $response['meta'] = $this->meta;
         }
 

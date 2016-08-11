@@ -3,11 +3,13 @@
 /*
  * This file is part of Hifone.
  *
- * (c) Hifone.com <hifone@hifone.com>
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Hifone\Http\Controllers;
 
@@ -76,7 +78,7 @@ class UserController extends Controller
         try {
             if ($data['location']) {
                 $location = Location::where('name', $data['location'])->first();
-                if (!is_null($location)) {
+                if (! is_null($location)) {
                     $data['location_id'] = $location->id;
                 }
             }
@@ -145,7 +147,7 @@ class UserController extends Controller
 
     public function blocking(User $user)
     {
-        $user->is_banned = (!$user->is_banned);
+        $user->is_banned = (! $user->is_banned);
         $user->save();
 
         return Redirect::route('users.show', $user->id);
@@ -199,7 +201,7 @@ class UserController extends Controller
 
             $password_confirmation = Input::only('password_confirmation')['password_confirmation'];
 
-            if (!($password == $password_confirmation)) {
+            if (! ($password == $password_confirmation)) {
                 return Redirect::back()
                     ->withInfo('当前输入新密码与错密码不一致, 请重新输入.');
             } else {

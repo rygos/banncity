@@ -3,11 +3,13 @@
 /*
  * This file is part of Hifone.
  *
- * (c) Hifone.com <hifone@hifone.com>
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Hifone\Models;
 
@@ -47,7 +49,7 @@ class Stats extends Model
     {
         $today = Carbon::now()->toDateString();
 
-        if (!$todayStatus = self::where('day', $today)->first()) {
+        if (! $todayStatus = self::where('day', $today)->first()) {
             $todayStatus = new self();
             $todayStatus->day = $today;
         }
