@@ -10,7 +10,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Hifone\Test\Commands\Thread;
 
 use Hifone\Commands\Thread\UpdateThreadCommand;
