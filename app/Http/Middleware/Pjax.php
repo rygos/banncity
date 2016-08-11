@@ -3,11 +3,13 @@
 /*
  * This file is part of Hifone.
  *
- * (c) Hifone.com <hifone@hifone.com>
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
  *
- * For the full copyright and license information, please view the LICENSE
+ * For the ful copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Hifone\Http\Middleware;
 
@@ -32,7 +34,7 @@ class Pjax
         $response = $next($request);
 
         // Only handle non-redirections and must be a pjax-request
-        if (!$response->isRedirection() && $request->pjax()) {
+        if (! $response->isRedirection() && $request->pjax()) {
             $crawler = new Crawler($response->getContent());
 
             // Filter to title (in order to update the browser title bar)

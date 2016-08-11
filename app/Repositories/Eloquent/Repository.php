@@ -3,11 +3,13 @@
 /*
  * This file is part of Hifone.
  *
- * (c) Hifone.com <hifone@hifone.com>
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
  *
- * For the full copyright and license information, please view the LICENSE
+ * For the ful copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Hifone\Repositories\Eloquent;
 
@@ -65,7 +67,7 @@ abstract class Repository implements RepositoryInterface, CriteriaInterface
     {
         $model = $this->app->make($this->model());
 
-        if (!$model instanceof Model) {
+        if (! $model instanceof Model) {
             throw new \Exception("Class {$this->model()} must be an instance of Illuminate\\Database\\Eloquent\\Model");
         }
 
@@ -77,7 +79,7 @@ abstract class Repository implements RepositoryInterface, CriteriaInterface
      */
     public function resetCriteria()
     {
-        if (!empty($this->criteria)) {
+        if (! empty($this->criteria)) {
             $this->criteria = [];
             $this->makeModel();
         }

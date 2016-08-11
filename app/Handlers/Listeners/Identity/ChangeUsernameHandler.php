@@ -3,11 +3,13 @@
 /*
  * This file is part of Hifone.
  *
- * (c) Hifone.com <hifone@hifone.com>
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
  *
- * For the full copyright and license information, please view the LICENSE
+ * For the ful copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Hifone\Handlers\Listeners\Identity;
 
@@ -34,7 +36,7 @@ class ChangeUsernameHandler
         \Log::info('start changed username : '.$user->id);
         $identitity = $user->identities()->first();
         if ($identitity && $identitity->nickname && Str::endsWith($user->username, '_'.$identitity->provider_id)) {
-            if (!User::whereUsername($identitity->nickname)->exists()) {
+            if (! User::whereUsername($identitity->nickname)->exists()) {
                 $user->username = $identitity->nickname;
                 $user->save();
                 \Log::info('changed username : '.$user->id);
