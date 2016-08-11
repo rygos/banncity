@@ -3,13 +3,15 @@
 /*
  * This file is part of Hifone.
  *
- * (c) Hifone.com <hifone@hifone.com>
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-if (!function_exists('back_url')) {
+
+if (! function_exists('back_url')) {
     /**
      * Create a new back url.
      *
@@ -32,7 +34,7 @@ if (!function_exists('back_url')) {
     }
 }
 
-if (!function_exists('set_active')) {
+if (! function_exists('set_active')) {
     /**
      * Set active class if request is in path.
      *
@@ -53,7 +55,7 @@ if (!function_exists('set_active')) {
     }
 }
 
-if (!function_exists('thread_filter')) {
+if (! function_exists('thread_filter')) {
     /**
      * Create a node url by filter.
      *
@@ -81,7 +83,7 @@ if (!function_exists('thread_filter')) {
     }
 }
 
-if (!function_exists('cdn')) {
+if (! function_exists('cdn')) {
     /**
      * Create a new cdn url.
      *
@@ -99,7 +101,7 @@ if (!function_exists('cdn')) {
     }
 }
 
-if (!function_exists('upload_url')) {
+if (! function_exists('upload_url')) {
     /**
      * Create a new upload url.
      *
@@ -113,7 +115,7 @@ if (!function_exists('upload_url')) {
     }
 }
 
-if (!function_exists('option_is_selected')) {
+if (! function_exists('option_is_selected')) {
     /**
      * Check if option is selected and output selected else output an empty string.
      *
@@ -132,7 +134,7 @@ if (!function_exists('option_is_selected')) {
     }
 }
 
-if (!function_exists('checkbox_is_active')) {
+if (! function_exists('checkbox_is_active')) {
     /**
      * Check if checkbox is selected and output checked else output an empty string.
      *
@@ -147,14 +149,14 @@ if (!function_exists('checkbox_is_active')) {
     }
 }
 
-if (!function_exists('admin_link')) {
+if (! function_exists('admin_link')) {
     function admin_link($title, $path, $id = '')
     {
         return '<a href="'.admin_url($path, $id).'" target="_blank">'.$title.'</a>';
     }
 }
 
-if (!function_exists('admin_url')) {
+if (! function_exists('admin_url')) {
     function admin_url($path, $id = '')
     {
         return env('APP_URL')."/admin/$path".($id ? '/'.$id : '');

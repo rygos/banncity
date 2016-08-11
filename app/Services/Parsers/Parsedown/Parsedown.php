@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of Hifone.
+ *
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Hifone\Services\Parsers\Parsedown;
 
 //
@@ -196,7 +206,7 @@ class Parsedown
                 if (isset($Block)) {
                     $Block['type'] = $blockType;
 
-                    if (!isset($Block['identified'])) {
+                    if (! isset($Block['identified'])) {
                         $Blocks [] = $CurrentBlock;
 
                         $Block['identified'] = true;
@@ -214,7 +224,7 @@ class Parsedown
 
             // ~
 
-            if (isset($CurrentBlock) and !isset($CurrentBlock['type']) and !isset($CurrentBlock['interrupted'])) {
+            if (isset($CurrentBlock) and ! isset($CurrentBlock['type']) and ! isset($CurrentBlock['interrupted'])) {
                 $CurrentBlock['element']['text'] .= "\n".$text;
             } else {
                 $Blocks [] = $CurrentBlock;
@@ -272,7 +282,7 @@ class Parsedown
 
     protected function blockCode($Line, $Block = null)
     {
-        if (isset($Block) and !isset($Block['type']) and !isset($Block['interrupted'])) {
+        if (isset($Block) and ! isset($Block['type']) and ! isset($Block['interrupted'])) {
             return;
         }
 
@@ -520,7 +530,7 @@ class Parsedown
             return $Block;
         }
 
-        if (!isset($Block['interrupted'])) {
+        if (! isset($Block['interrupted'])) {
             $text = preg_replace('/^[ ]{0,4}/', '', $Line['body']);
 
             $Block['li']['text'] [] = $text;
@@ -573,7 +583,7 @@ class Parsedown
             return $Block;
         }
 
-        if (!isset($Block['interrupted'])) {
+        if (! isset($Block['interrupted'])) {
             $Block['element']['text'] [] = $Line['text'];
 
             return $Block;
@@ -601,7 +611,7 @@ class Parsedown
 
     protected function blockSetextHeader($Line, array $Block = null)
     {
-        if (!isset($Block) or isset($Block['type']) or isset($Block['interrupted'])) {
+        if (! isset($Block) or isset($Block['type']) or isset($Block['interrupted'])) {
             return;
         }
 
@@ -719,7 +729,7 @@ class Parsedown
 
     protected function blockTable($Line, array $Block = null)
     {
-        if (!isset($Block) or isset($Block['type']) or isset($Block['interrupted'])) {
+        if (! isset($Block) or isset($Block['type']) or isset($Block['interrupted'])) {
             return;
         }
 
@@ -922,7 +932,7 @@ class Parsedown
             foreach ($this->InlineTypes[$marker] as $inlineType) {
                 $Inline = $this->{'inline'.$inlineType}($Excerpt);
 
-                if (!isset($Inline)) {
+                if (! isset($Inline)) {
                     continue;
                 }
 
@@ -934,7 +944,7 @@ class Parsedown
 
                 // sets a default inline position
 
-                if (!isset($Inline['position'])) {
+                if (! isset($Inline['position'])) {
                     $Inline['position'] = $markerPosition;
                 }
 
@@ -995,7 +1005,7 @@ class Parsedown
         if (strpos($Excerpt['text'], '>') !== false and preg_match('/^<((mailto:)?\S+?@\S+?)>/i', $Excerpt['text'], $matches)) {
             $url = $matches[1];
 
-            if (!isset($matches[2])) {
+            if (! isset($matches[2])) {
                 $url = 'mailto:'.$url;
             }
 
@@ -1014,7 +1024,7 @@ class Parsedown
 
     protected function inlineEmphasis($Excerpt)
     {
-        if (!isset($Excerpt['text'][1])) {
+        if (! isset($Excerpt['text'][1])) {
             return;
         }
 
@@ -1050,7 +1060,7 @@ class Parsedown
 
     protected function inlineImage($Excerpt)
     {
-        if (!isset($Excerpt['text'][1]) or $Excerpt['text'][1] !== '[') {
+        if (! isset($Excerpt['text'][1]) or $Excerpt['text'][1] !== '[') {
             return;
         }
 
@@ -1124,7 +1134,7 @@ class Parsedown
                 $definition = strtolower($Element['text']);
             }
 
-            if (!isset($this->DefinitionData['Reference'][$definition])) {
+            if (! isset($this->DefinitionData['Reference'][$definition])) {
                 return;
             }
 
@@ -1172,7 +1182,7 @@ class Parsedown
 
     protected function inlineSpecialCharacter($Excerpt)
     {
-        if ($Excerpt['text'][0] === '&' and !preg_match('/^&#?\w+;/', $Excerpt['text'])) {
+        if ($Excerpt['text'][0] === '&' and ! preg_match('/^&#?\w+;/', $Excerpt['text'])) {
             return [
                 'markup' => '&amp;',
                 'extent' => 1,
@@ -1191,7 +1201,7 @@ class Parsedown
 
     protected function inlineStrikethrough($Excerpt)
     {
-        if (!isset($Excerpt['text'][1])) {
+        if (! isset($Excerpt['text'][1])) {
             return;
         }
 
@@ -1209,7 +1219,7 @@ class Parsedown
 
     protected function inlineUrl($Excerpt)
     {
-        if ($this->urlsLinked !== true or !isset($Excerpt['text'][2]) or $Excerpt['text'][2] !== '/') {
+        if ($this->urlsLinked !== true or ! isset($Excerpt['text'][2]) or $Excerpt['text'][2] !== '/') {
             return;
         }
 
@@ -1318,7 +1328,7 @@ class Parsedown
 
         $trimmedMarkup = trim($markup);
 
-        if (!in_array('', $lines) and substr($trimmedMarkup, 0, 3) === '<p>') {
+        if (! in_array('', $lines) and substr($trimmedMarkup, 0, 3) === '<p>') {
             $markup = $trimmedMarkup;
             $markup = substr($markup, 3);
 

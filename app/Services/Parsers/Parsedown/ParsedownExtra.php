@@ -3,11 +3,13 @@
 /*
  * This file is part of Hifone.
  *
- * (c) Hifone.com <hifone@hifone.com>
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Hifone\Services\Parsers\Parsedown;
 
@@ -141,7 +143,7 @@ class ParsedownExtra extends Parsedown
 
     protected function blockDefinitionList($Line, $Block)
     {
-        if (!isset($Block) or isset($Block['type'])) {
+        if (! isset($Block) or isset($Block['type'])) {
             return;
         }
 
@@ -217,7 +219,7 @@ class ParsedownExtra extends Parsedown
 
     protected function blockMarkupComplete($Block)
     {
-        if (!isset($Block['void'])) {
+        if (! isset($Block['void'])) {
             $Block['markup'] = $this->processTag($Block['markup']);
         }
 
@@ -254,13 +256,13 @@ class ParsedownExtra extends Parsedown
         if (preg_match('/^\[\^(.+?)\]/', $Excerpt['text'], $matches)) {
             $name = $matches[1];
 
-            if (!isset($this->DefinitionData['Footnote'][$name])) {
+            if (! isset($this->DefinitionData['Footnote'][$name])) {
                 return;
             }
 
             $this->DefinitionData['Footnote'][$name]['count']++;
 
-            if (!isset($this->DefinitionData['Footnote'][$name]['number'])) {
+            if (! isset($this->DefinitionData['Footnote'][$name]['number'])) {
                 $this->DefinitionData['Footnote'][$name]['number'] = ++$this->footnoteCount; // » &
             }
 
@@ -370,7 +372,7 @@ class ParsedownExtra extends Parsedown
         uasort($this->DefinitionData['Footnote'], 'self::sortFootnotes');
 
         foreach ($this->DefinitionData['Footnote'] as $definitionId => $DefinitionData) {
-            if (!isset($DefinitionData['number'])) {
+            if (! isset($DefinitionData['number'])) {
                 continue;
             }
 
@@ -462,7 +464,7 @@ class ParsedownExtra extends Parsedown
             foreach ($DOMDocument->documentElement->childNodes as $Node) {
                 $nodeMarkup = $DOMDocument->saveHTML($Node);
 
-                if ($Node instanceof DOMElement and !in_array($Node->nodeName, $this->textLevelElements)) {
+                if ($Node instanceof DOMElement and ! in_array($Node->nodeName, $this->textLevelElements)) {
                     $elementText .= $this->processTag($nodeMarkup);
                 } else {
                     $elementText .= $nodeMarkup;

@@ -3,11 +3,13 @@
 /*
  * This file is part of Hifone.
  *
- * (c) Hifone.com <hifone@hifone.com>
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Hifone\Http\Controllers;
 
@@ -51,7 +53,7 @@ abstract class Controller extends BaseController
             $data['breadcrumb'] = $this->breadcrumb->render();
         }
 
-        if (!request()->ajax()) {
+        if (! request()->ajax()) {
             //
         }
 
@@ -60,7 +62,7 @@ abstract class Controller extends BaseController
 
     public function needAuthorOrAdminPermission($author_id)
     {
-        if (!Entrust::hasRole(['Founder', 'Admin']) && $author_id != Auth::id()) {
+        if (! Entrust::hasRole(['Founder', 'Admin']) && $author_id != Auth::id()) {
             throw new HttpException(401);
         }
     }
