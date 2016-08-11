@@ -3,11 +3,13 @@
 /*
  * This file is part of Hifone.
  *
- * (c) Hifone.com <hifone@hifone.com>
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
  *
- * For the full copyright and license information, please view the LICENSE
+ * For the ful copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Hifone\Http\Controllers\Auth;
 
@@ -84,7 +86,7 @@ class AuthController extends Controller
         $loginData = Input::only(['login', 'password', 'verifycode']);
 
         $verifycode = array_pull($loginData, 'verifycode');
-        if (!Config::get('setting.captcha_login_disabled') && $verifycode != Session::get('phrase')) {
+        if (! Config::get('setting.captcha_login_disabled') && $verifycode != Session::get('phrase')) {
             // instructions if user phrase is good
             return Redirect::to('auth/login')
             ->withInput(Input::except('password'))
@@ -143,7 +145,7 @@ class AuthController extends Controller
             $registerData = Input::only(['username', 'email', 'password', 'password_confirmation', 'verifycode']);
 
             $verifycode = array_pull($registerData, 'verifycode');
-            if (!Config::get('setting.captcha_register_disabled') && $verifycode != Session::get('phrase')) {
+            if (! Config::get('setting.captcha_register_disabled') && $verifycode != Session::get('phrase')) {
                 return Redirect::to('auth/register')
                     ->withTitle(sprintf('%s %s', trans('hifone.whoops'), trans('hifone.users.add.failure')))
                     ->withInput(Input::all())
@@ -243,7 +245,7 @@ class AuthController extends Controller
             //已经连接过，找出user_id, 直接登录
             $user = User::find($identity->user_id);
 
-            if (!Auth::check()) {
+            if (! Auth::check()) {
                 Auth::login($user, true);
             }
 
@@ -254,7 +256,7 @@ class AuthController extends Controller
 
     public function userBanned()
     {
-        if (Auth::check() && !Auth::user()->is_banned) {
+        if (Auth::check() && ! Auth::user()->is_banned) {
             return redirect(route('home'));
         }
         //force logout
