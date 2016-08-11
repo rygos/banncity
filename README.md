@@ -8,6 +8,28 @@ Banncity is a free, open-source, self-hosted forum software based on the Laravel
 Banncity itself based highly on the [Hifone Project](https://github.com/Hifone/Hifone).
 I have forked it and create a new Project because of different Goals for some functions.
 
+### Goals of Banncity / Hifone and Differences
+
+#### 1. The Administration Panel
+On July, the Beautiful Administration Panel of Hifone was splitted into a new Project, installable with composer.
+
+***The Good:*** I think this is a great way to distribute Updates for this.
+
+***The Bad:*** The new Administration Panel is harder to use. And it looks more like a Database Viewer.
+Additional to this, in my opinion a Administration Dashboard can be integrated into the Design and Script itself.
+
+***The Goal:*** Get rid of this Dashboard and integrate the funcktions into the frontend with proper role and permission management.
+
+#### Additional things
+(Later i write some additional Informations about this Points)
+* Locations 
+* Bug Hunting
+* Restructure the Language-Files-Logic
+* User-Community-Groups (Like the Groups on Facebook)
+* User Blogs (maybe)
+* Comments on Userprofiles
+* Comments on Replies
+
 ## Features
 
 This package is currently in (very-)alpha stage, so all of the following features may or may not work yet. However, feel free to post issues and features requests [here](https://github.com/rygos/banncity/issues) . We will try to fix and improve the package as fast as we can based on your help!
@@ -103,6 +125,7 @@ gulp
 ```
 
 If you're making a lot of changes, you'll find that running `gulp watch` will really help you out!
+
 
 ## Demo
 
