@@ -1,6 +1,6 @@
 @if (isset($sections) && count($sections))
 <div id="sections" class="panel panel-default">
-  <div class="panel-heading">{{ trans('hifone.nodes.all') }}</div>
+  <div class="panel-heading">{{ trans('nodes.all') }}</div>
   <div class="panel-body">
     <div class="row node-list">
       @foreach ($sections as $index => $section)

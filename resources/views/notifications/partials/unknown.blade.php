@@ -8,7 +8,7 @@
     unknown
   </div>
     <div class="media-content summary markdown-reply">
-      <span class="deleted text-center">{{ trans('hifone.notifications.deleted') }}</span>
+      <span class="deleted text-center">{{ trans('notifications.deleted') }}</span>
     </div>
 
   </div>

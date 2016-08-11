@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{!! trans('hifone.notifications.my') !!} @parent
+{!! trans('notifications.my') !!} @parent
 @stop
 
 @section('content')
@@ -9,7 +9,7 @@
 <div class="notifications panel">
 
     <div class="panel-heading clearfix">
-      {!! trans('hifone.notifications.my') !!}
+      {!! trans('notifications.my') !!}
       <span class="pull-right">
           <a class="btn btn-sm btn-danger" rel="nofollow" data-method="post" data-url="/notification/clean">{{ trans('forms.clean') }}</a>
       </span>
@@ -34,7 +34,7 @@
 	</div>
     @else
 	<div class="panel-body">
-		<div class="empty-block">{!! trans('hifone.notifications.noitem') !!}</div>
+		<div class="empty-block">{!! trans('notifications.noitem') !!}</div>
 	</div>
     @endif
 

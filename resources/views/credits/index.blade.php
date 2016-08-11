@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{!! trans('hifone.credits.mine') !!} @parent
+{!! trans('credits.mine') !!} @parent
 @stop
 
 @section('content')
@@ -9,12 +9,12 @@
 <div class="panel panel-default">
 
     <div class="panel-heading">
-      {{ trans('hifone.credits.mine') }}
+      {{ trans('credits.mine') }}
     </div>
     <div class="panel-body">
       <div class="media">
       <div class="media-heading">
-        {{ trans('hifone.credits.balance_current') }}
+        {{ trans('credits.balance_current') }}
        <span class="coin_list" data-toggle="tooltip", data-placement="bottom" title="{{ $current_user->score }}">
         {!! $current_user->coins !!}
         </span>
@@ -24,10 +24,10 @@
         <tbody>
           <tr>
             <th>#</th>
-            <th>{{ trans('hifone.credits.time') }}</th>
-            <th>{{ trans('hifone.credits.type') }}</th>
-            <th>{{ trans('hifone.credits.reward') }}</th>
-            <th>{{ trans('hifone.credits.balance') }}</th>
+            <th>{{ trans('credits.time') }}</th>
+            <th>{{ trans('credits.type') }}</th>
+            <th>{{ trans('credits.reward') }}</th>
+            <th>{{ trans('credits.balance') }}</th>
           </tr>
           @foreach ($credits as $index => $credit)
           <tr>

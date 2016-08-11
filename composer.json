@@ -36,7 +36,8 @@
         "zizaco/entrust": "dev-laravel-5",
         "cmgmyr/messenger": "2.11",
         "barryvdh/laravel-debugbar": "dev-master",
-        "watson/sitemap": "^2.0"
+        "watson/sitemap": "^2.0",
+        "barryvdh/laravel-translation-manager": "^0.2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.5",

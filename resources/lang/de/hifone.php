@@ -41,12 +41,7 @@ return [
     'ranking'             => 'Platzierung',
     'member'              => 'Mitglied',
     'yes'                 => 'Ja',
-    'error_occurred'      => 'Es ist ein Fehler aufgetreten.',
-    'content_empty'       => 'Inhalt ist leer',
-    'loading'             => 'Lade...',
-    'uploading_file'      => 'Lade Datei hoch...',
-    'action_title'        => 'Aktion bestaetigen',
-    'action_text'         => 'Sicher das diese Aktion durchgefuehrt werden soll?',
+
 // Nodes
     'nodes'            => [
         'all'               => 'Forennavigation',
@@ -243,17 +238,6 @@ return [
         'same_user_error' => 'Empfänger und Sender dürfen nicht die gleichen sein.',
     ],
 
-// Credits
-    'credits' => [
-        'credits'         => 'Credits',
-        'mine'            => 'Meine Credits',
-        'time'            => 'Zeit',
-        'type'            => 'Typ',
-        'reward'          => 'Betrag',
-        'balance'         => 'Kontostand',
-        'balance_current' => 'Aktueller Kontostand:',
-    ],
-
 // Tips
     'tips' => [
         'tips' => 'Zufälliger Tipp',
@@ -297,43 +281,10 @@ return [
             'unbound'         => 'Verbindung zu :provider trennen',
             'unbound_success' => 'Verbindung erfolgreich getrennt.',
             'bound'           => 'Verbinden zu :provider',
-            //OAuth Messages for Login
-            'login' => [
-                'note' => 'Nach einem erfolgreichem Login, wird der ":provider" Account für ":name" mit dem Login verbunden.',
-            ],
-            //OAuth Landing Page
-            'landing' => [
-                'title'    => 'Fremdanbieter Login',
-                'welcome'  => ', um deine Registrierung abschließen zu können, wähle aus folgenden Möglichkeiten:',
-                'choice_1' => '1. Vorhandener Account',
-                'button_1' => 'Login',
-                'choice_2' => '2. Neuer Account',
-                'button_2' => 'Auto Registrierung',
-                'note'     => 'Diese 2 Möglichkeiten erstellen aus deinem :provider Account :name automatisch einen Account in Hifone.',
-            ],
+
             'errors' => [
                 'invalidstate' => 'Authentifizierung fehlgeschlagen.',
             ],
-        ],
-    ],
-
-    //HTTP Errors
-    'errors' => [
-        '401' => [
-            'title' => 'Fehler 401 - Nicht Autorisiert.',
-            'desc'  => 'Du bist nicht Autorisiert diese Seite zu öffnen. Du musst dich erst anmelden.',
-        ],
-        '403' => [
-            'title' => 'Fehler 403 - Verboten.',
-            'desc'  => 'Du hast nicht die berechtigung diese Adresse aufzurufen.',
-        ],
-        '404' => [
-            'title' => 'Fehler 404 - Seite nicht gefunden.',
-            'desc'  => 'Entschuldige, die Seite die du suchst existiert nicht mehr oder konnte nicht gefunden werden.',
-        ],
-        '500' => [
-            'title' => 'Fehler 500 - Interner Server Fehler.',
-            'desc'  => 'Tja. Da ist ein Fehler aufgetreten, der nicht hätte auftreten dürfen.',
         ],
     ],
 

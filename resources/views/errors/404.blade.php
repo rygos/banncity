@@ -1,15 +1,15 @@
 @extends('layouts.default')
 @section('title')
-	{{ trans('hifone.errors.404.title') }}_@parent
+	{{ trans('errors.404.title') }}_@parent
 @stop
 
 @section('content')
 	<div class="panel panel-default users-index">
 		<div class="panel-heading text-center">
-			<h1>{{ trans('hifone.errors.404.title') }}</h1>
+			<h1>{{ trans('errors.404.title') }}</h1>
 		</div>
 		<div class="panel-body">
-			{{ trans('hifone.errors.404.desc') }}
+			{{ trans('errors.404.desc') }}
 		</div>
 	</div>
 @stop

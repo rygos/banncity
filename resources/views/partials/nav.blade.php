@@ -9,9 +9,9 @@
         </div>
         <div id="main-nav-menu">
           <ul class="nav navbar-nav">
-          <li {!! set_active('/') !!}><a href="{!! route('home') !!}"><i class="fa fa-home"></i> <span class="hidden-xs hidden-sm">{!! trans('hifone.home') !!}</span></a></li>
-          <li {!! set_active('thread*',['hidden-sm hidden-xs']) !!}><a href="{!! route('thread.index') !!}"><i class="fa fa-comments-o"></i> {!! trans('hifone.threads.threads') !!}</a></li>
-          <li {!! set_active('excellent*') !!}><a href="{!! route('excellent') !!}"><i class="fa fa-diamond"></i> <span class="hidden-xs hidden-sm">{!! trans('hifone.excellent') !!}</span></a></li>
+          <li {!! set_active('/') !!}><a href="{!! route('home') !!}"><i class="fa fa-home"></i> <span class="hidden-xs hidden-sm">{!! trans('misc.home') !!}</span></a></li>
+          <li {!! set_active('thread*',['hidden-sm hidden-xs']) !!}><a href="{!! route('thread.index') !!}"><i class="fa fa-comments-o"></i> {!! trans('threads.threads') !!}</a></li>
+          <li {!! set_active('excellent*') !!}><a href="{!! route('excellent') !!}"><i class="fa fa-diamond"></i> <span class="hidden-xs hidden-sm">{!! trans('threads.excellent') !!}</span></a></li>
           </ul>
         </div>
         @if(Auth::check())
@@ -22,13 +22,13 @@
               <span class="sr-only">Toggle</span>
               <i class="fa fa-reorder"></i>
             </button>
-            <ul class="dropdown-menu" role="menu"><li class=""><a href="{{ route('user.home', $current_user->username) }}">{{ trans('hifone.users.profile') }}</a></li>
+            <ul class="dropdown-menu" role="menu"><li class=""><a href="{{ route('user.home', $current_user->username) }}">{{ trans('users.profile') }}</a></li>
             <li><div class='divider'></div></li>
-                <li><a href="{!! route('user.edit', Auth::user()->id) !!}">{{ trans('hifone.users.edit.title') }}</a></li>
-                <li><a href="{{ route('user.favorites',$current_user->id) }}">{{ trans('hifone.users.favorites') }}</a></li>
-                <li><a href="{{ route('credit.index')}}">{{ trans('hifone.users.credits') }}</a></li>
+                <li><a href="{!! route('user.edit', Auth::user()->id) !!}">{{ trans('users.edit_title') }}</a></li>
+                <li><a href="{{ route('user.favorites',$current_user->id) }}">{{ trans('users.favorites') }}</a></li>
+                <li><a href="{{ route('credit.index')}}">{{ trans('users.credits') }}</a></li>
                 <li class='divider'></li>
-                <li><a href="{!! url('auth/logout') !!}" onclick=" return confirm('{!! trans('hifone.logout_confirm') !!}')"><i class="fa fa-sign-out"></i> {!! trans('hifone.logout') !!}
+                <li><a href="{!! url('auth/logout') !!}" onclick=" return confirm('{!! trans('auth.logout_confirm') !!}')"><i class="fa fa-sign-out"></i> {!! trans('auth.logout') !!}
                     </a></li>
             </ul>
           </li>
