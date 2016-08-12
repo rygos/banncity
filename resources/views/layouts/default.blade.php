@@ -26,16 +26,16 @@
         </script>
         <script type="text/javascript">
             Hifone.jsLang = {
-                'delete_form_title' : '{{ trans('hifone.action_title') }}',
-                'delete_form_text' : '{{ trans('hifone.action_text') }}',
-                'uploading_file' : '{{ trans('hifone.uploading_file') }}',
-                'loading' : '{{ trans('hifone.loading') }}',
-                'content_is_empty' : '{{ trans('hifone.content_empty') }}',
-                'operation_success' : '{{ trans('hifone.success') }}',
-                'error_occurred' : '{{ trans('hifone.error_occurred') }}',
-                'button_yes' : '{{ trans('hifone.yes') }}',
-                'like' : '{{ trans('hifone.like') }}',
-                'dislike' : '{{ trans('hifone.unlike') }}'
+                'delete_form_title' : '{{ trans('layouts.default.action_title') }}',
+                'delete_form_text' : '{{ trans('layouts.default.action_text') }}',
+                'uploading_file' : '{{ trans('layouts.default.uploading_file') }}',
+                'loading' : '{{ trans('layouts.default.loading') }}',
+                'content_is_empty' : '{{ trans('layouts.default.content_empty') }}',
+                'operation_success' : '{{ trans('layouts.default.success') }}',
+                'error_occurred' : '{{ trans('layouts.default.error_occurred') }}',
+                'button_yes' : '{{ trans('layouts.default.yes') }}',
+                'like' : '{{ trans('layouts.default.like') }}',
+                'dislike' : '{{ trans('layouts.default.unlike') }}'
             };
         </script>
         @if($stylesheet)

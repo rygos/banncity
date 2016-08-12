@@ -7,7 +7,7 @@
     <div class="panel-body text-center">
       <div class="btn-group">
         <a href="{!! isset($node) ? URL::route('thread.create', ['node_id' => $node->id]) : URL::route('thread.create') ; !!}" class="btn btn-primary">
-          <i class="fa fa-pencil"> </i> {!! trans('hifone.threads.add') !!}
+          <i class="fa fa-pencil"> </i> {!! trans('partials.sidebar.thread_add') !!}
         </a>
         @if($new_thread_dropdowns)
         <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -23,18 +23,18 @@
     @if(Config::get('setting.module_active_pms'))
     <div class="panel panel-default corner-radius">
         <div class="panel-heading">
-            <h3 class="panel-title">{{ trans('hifone.pms.pms') }}</h3>
+            <h3 class="panel-title">{{ trans('partials.sidebar.pms_title') }}</h3>
         </div>
         <div class="panel-body text-center">
             <div class="btn-group">
                 <a href="{!! URL::route('messages.create') !!}" class="btn btn-primary">
-                    <i class="fa fa-pencil"> </i> {!! trans('hifone.pms.create') !!}
+                    <i class="fa fa-pencil"> </i> {!! trans('partials.sidebar.pms_create') !!}
                 </a>
             </div>
             <br><br>
             <div class="btn-group">
                 <a href="{!! URL::route('messages.index') !!}" class="btn btn-primary">
-                    <i> </i> {!! trans('hifone.pms.nav_inbox') !!}
+                    <i> </i> {!! trans('partials.sidebar.pms_inbox') !!}
                 </a>
             </div>
         </div>
@@ -47,11 +47,11 @@
     </div>
     <div class="panel-body text-center">
         <a href="/auth/register" class="btn btn-primary">
-          <i class="fa fa-user"> </i> {!! trans('hifone.signup') !!}
+          <i class="fa fa-user"> </i> {!! trans('partials.sidebar.signup') !!}
         </a>
     </div>
     <div class="panel-footer text-center">
-      {{ trans('hifone.registered_users') }} <a href="/auth/login">{{ trans('hifone.login.login') }}</a>
+      {{ trans('partials.sidebar.registered_users') }} <a href="/auth/login">{{ trans('partials.sidebar.login') }}</a>
     </div>
   </div>
   @endif
@@ -61,7 +61,7 @@
 @if(Request::is('/'))
 <div class="panel panel-default corner-radius">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ trans('hifone.ranking') }}</h3>
+      <h3 class="panel-title">{{ trans('partials.sidebar.ranking') }}</h3>
     </div>
     <div class="panel-body">
       <table class="table table-striped">
@@ -91,7 +91,7 @@
 </div>
 <div class="panel panel-default corner-radius">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ trans('hifone.tags.hot') }}</h3>
+      <h3 class="panel-title">{{ trans('partials.sidebar.tags_hot') }}</h3>
     </div>
     <div class="panel-body">
     @foreach($top_tags as $index => $tag)
@@ -104,7 +104,7 @@
 @if (isset($links) && count($links))
   <div class="panel panel-default corner-radius">
     <div class="panel-heading">
-      <h3 class="panel-title">{!! trans('hifone.links.links') !!}</h3>
+      <h3 class="panel-title">{!! trans('partials.sidebar.links') !!}</h3>
     </div>
     <ul class="list-group">
       @foreach ($links as $link)
@@ -120,7 +120,7 @@
 @if (isset($nodeThreads) && count($nodeThreads))
   <div class="panel panel-default corner-radius">
     <div class="panel-heading">
-      <h3 class="panel-title">{!! trans('hifone.nodes.same_node_threads') !!}</h3>
+      <h3 class="panel-title">{!! trans('partials.sidebar.same_node_threads') !!}</h3>
     </div>
     <div class="panel-body">
       <ul class="list">
@@ -140,7 +140,7 @@
 
 <div class="panel panel-default corner-radius">
   <div class="panel-heading">
-    <h3 class="panel-title">{!! trans('hifone.tips.tips') !!}</h3>
+    <h3 class="panel-title">{!! trans('partials.sidebar.tips') !!}</h3>
   </div>
   <div class="panel-body">
     {!! (isset($tip) && $tip) ? $tip->body : null !!}
@@ -149,12 +149,12 @@
 
 <div class="panel panel-default corner-radius">
   <div class="panel-heading">
-    <h3 class="panel-title">{{ trans('hifone.stats.title') }}</h3>
+    <h3 class="panel-title">{{ trans('partials.sidebar.stats_title') }}</h3>
   </div>
     <ul class="list-group">
-      <li class="list-group-item">{{ trans('hifone.stats.users') }}: {{ $stats['user_count'] }} </li>
-      <li class="list-group-item">{{ trans('hifone.stats.threads') }}: {{ $stats['thread_count'] }}</li>
-      <li class="list-group-item">{{ trans('hifone.stats.replies') }}: {{ $stats['reply_count'] }}</li>
+      <li class="list-group-item">{{ trans('partials.sidebar.stats_users') }}: {{ $stats['user_count'] }} </li>
+      <li class="list-group-item">{{ trans('partials.sidebar.stats_threads') }}: {{ $stats['thread_count'] }}</li>
+      <li class="list-group-item">{{ trans('partials.sidebar.stats_replies') }}: {{ $stats['reply_count'] }}</li>
     </ul>
 </div>
 

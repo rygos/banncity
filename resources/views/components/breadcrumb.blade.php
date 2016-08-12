@@ -2,7 +2,7 @@
     <div class="col-xs-12">
         <ul class="breadcrumb">
             <li>
-                <a href="{{ route('home') }}">{{ trans('hifone.home') }}</a>
+                <a href="{{ route('home') }}">{{ trans('components.breadcrumb.home') }}</a>
             </li>
             @foreach($breadcrumbs as $index => $breadcrumb)
             <li>

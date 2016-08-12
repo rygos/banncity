@@ -155,6 +155,7 @@ return [
         Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
+        //Barryvdh\TranslationManager\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Arrilot\Widgets\ServiceProvider::class,
@@ -174,6 +175,7 @@ return [
         Cmgmyr\Messenger\MessengerServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Watson\Sitemap\SitemapServiceProvider::class,
+        Barryvdh\TranslationManager\ManagerServiceProvider::class,
 
         /*
          * Application Service Providers...
