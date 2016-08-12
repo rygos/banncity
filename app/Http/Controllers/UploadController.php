@@ -23,7 +23,7 @@ class UploadController extends Controller
         if ($file = Input::file('file')) {
             $data = dispatch(new UploadImageCommand($file));
         } else {
-            $data['error'] = trans('hifone.photos.upload_error');
+            $data['error'] = trans('ctr.upload.upload_error');
         }
 
         return $data;

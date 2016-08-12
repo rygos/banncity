@@ -25,8 +25,8 @@
       <h1 class="panel-title thread-title">{{ $thread->title }}</h1>
 
       <div class="likes">
-            <a href="javascript:void(0);" data-action="like" data-type="Thread" data-url="{{ route('like.store') }}" title="{{ trans('hifone.like') }}" class="fa fa-chevron-up likeable like" data-id="{{ $thread->id }}"> {{ $thread->like_count }}</a>
-            <a href="javascript:void(0);" data-action="unlike" data-type="Thread" data-url="{{ route('like.destroy', $thread->id) }}" title="{{ trans('hifone.unlike') }}" class="fa fa-chevron-down likeable like" data-id="{{ $thread->id }}"></a>
+            <a href="javascript:void(0);" data-action="like" data-type="Thread" data-url="{{ route('like.store') }}" title="{{ trans('threads.show.like') }}" class="fa fa-chevron-up likeable like" data-id="{{ $thread->id }}"> {{ $thread->like_count }}</a>
+            <a href="javascript:void(0);" data-action="unlike" data-type="Thread" data-url="{{ route('like.destroy', $thread->id) }}" title="{{ trans('threads.show.unlike') }}" class="fa fa-chevron-down likeable like" data-id="{{ $thread->id }}"></a>
       </div>
 
       @include('threads.partials.meta')
@@ -42,7 +42,7 @@
     @foreach ($thread->appends as $index => $append)
 
         <div class="appends">
-            <span class="meta">{{ trans('hifone.appends.appends') }} {{ $index + 1 }} &nbsp;k·&nbsp; <abbr title="{!! $append->created_at !!}" class="timeago">{{ $append->created_at }}</abbr></span>
+            <span class="meta">{{ trans('threads.show.appends') }} {{ $index + 1 }} &nbsp;k·&nbsp; <abbr title="{!! $append->created_at !!}" class="timeago">{{ $append->created_at }}</abbr></span>
             <div class="sep5"></div>
             <div class="markdown-reply append-content">
                 {!! $append->content !!}
@@ -57,7 +57,7 @@
   <!-- Reply List -->
   <div class="replies panel panel-default list-panel replies-index">
     <div class="panel-heading">
-      <div class="total">{{ trans('hifone.replies.total') }}: <b>{{ $replies->total() }}</b> </div>
+      <div class="total">{{ trans('threads.show.total_replies') }}: <b>{{ $replies->total() }}</b> </div>
     </div>
 
     <div class="panel-body">
@@ -65,7 +65,7 @@
       @if (count($replies))
         @include('threads.partials.replies')
       @else
-         <div class="empty-block">{{ trans('hifone.replies.noitem') }}</div>
+         <div class="empty-block">{{ trans('threads.show.noitem') }}</div>
       @endif
 
       <!-- Pager -->
@@ -78,7 +78,7 @@
   <!-- Reply Box -->
 <div class="panel panel-default">
   <div class="panel-heading">
-  {{ trans('hifone.replies.add') }}
+  {{ trans('threads.show.add_reply') }}
   </div>
   <div class="panel-body">
     <div class="reply-box form">
@@ -91,22 +91,22 @@
         <div class="form-group">
               {!! Form::textarea('reply[body]', null, ['class' => 'post-editor form-control',
                                                 'rows' => 5,
-                                                'placeholder' => trans('hifone.markdown_support'),
+                                                'placeholder' => trans('threads.show.markdown_support'),
                                                 'style' => "overflow:hidden",
                                                 'id' => 'body_field']) !!}
         </div>
 
         <div class="form-group status-post-submit">
-              {!! Form::submit(trans('forms.publish'), ['class' => 'btn btn-primary', 'id' => 'reply-create-submit']) !!}
+              {!! Form::submit(trans('threads.show.publish'), ['class' => 'btn btn-primary', 'id' => 'reply-create-submit']) !!}
             &nbsp;<span class="help-inline" title="Or Command + Enter">Ctrl+Enter</span>
             <span class="pull-right">
-              <small>{!! trans('hifone.photos.drag_drop') !!}</small>
+              <small>{!! trans('threads.show.drag_drop') !!}</small>
             </span>
         </div>
     {!! Form::close() !!}
     @else
     <div style="padding:20px;">
-    {!! trans('hifone.threads.login_needed') !!}
+    {!! trans('threads.show.login_needed') !!}
   </div>
     @endif
     </div>

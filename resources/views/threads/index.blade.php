@@ -6,7 +6,7 @@
 {{ $node->name }}
  - @parent
 @else
-{{ trans('hifone.threads.list') }}
+{{ trans('threads.index.list') }}
  - @parent
 @endif
 @stop
@@ -19,20 +19,20 @@
         <div class="panel-heading">
         <div class="pull-left hidden-sm hidden-xs">
           @if (Request::is('/'))
-            <i class="fa fa-list"></i> {{ trans('hifone.home') }}
+            <i class="fa fa-list"></i> {{ trans('threads.index.home') }}
           @elseif (isset($node))
           <div class="node-info">
             <strong>{{ $node->name }}</strong>
-            <span class="total">{{ trans('hifone.threads.thread_count', ['threads' => $node->thread_count ]) }}</span>
+            <span class="total">{{ trans('threads.index.thread_count', ['threads' => $node->thread_count ]) }}</span>
             @if($node->description)<div class="summary">{{ $node->description }}</div>@endif
           </div>
           @elseif (isset($tag))
           <div class="node-info">
-          {{ trans('hifone.tags.name') }}: <strong>{{ $tag->name }}</strong>
-          <span class="total">, {{ trans('hifone.threads.thread_count', ['threads' => $tag->threads->count() ]) }}</span>
+          {{ trans('threads.index.tags') }}: <strong>{{ $tag->name }}</strong>
+          <span class="total">, {{ trans('threads.index.thread_count', ['threads' => $tag->threads->count() ]) }}</span>
           </div>
           @else
-          <i class="fa fa-comments-o"></i> {{ trans('hifone.threads.threads') }}
+          <i class="fa fa-comments-o"></i> {{ trans('threads.index.threads') }}
           @endif
           </div>
           @if (!isset($tag))
@@ -54,7 +54,7 @@
 
         @else
             <div class="panel-body">
-                <div class="empty-block">{{ trans('hifone.noitem') }}</div>
+                <div class="empty-block">{{ trans('threads.index.noitem') }}</div>
             </div>
         @endif
 

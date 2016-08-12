@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-    {{ trans('hifone.threads.add') }}_@parent
+    {{ trans('threads.create.add') }}_@parent
 @stop
 
 @section('content')
@@ -10,7 +10,7 @@
 
         <div class="col-md-9 main-col">
             <div class="panel panel-default corner-radius">
-                <div class="panel-heading">{{ trans('hifone.threads.add') }}</div>
+                <div class="panel-heading">{{ trans('threads.create.add') }}</div>
                 <div class="panel-body">
                     <div class="reply-box form box-block">
                         @if (isset($thread))
@@ -20,13 +20,13 @@
                         @endif
 
                         <div class="form-group">
-                            {!! Form::text('thread[title]', isset($thread) ? $thread->title : null, ['class' => 'form-control', 'id' => 'thread_title', 'placeholder' => trans('hifone.threads.title')]) !!}
+                            {!! Form::text('thread[title]', isset($thread) ? $thread->title : null, ['class' => 'form-control', 'id' => 'thread_title', 'placeholder' => trans('threads.create.title')]) !!}
                         </div>
 
                         <div class="form-group">
                             <select class="form-control selectpicker" name="thread[node_id]">
                                 <option value=""
-                                        disabled {!! $node ? null : 'selected'; !!}>{{ trans('hifone.threads.pick_node') }}</option>
+                                        disabled {!! $node ? null : 'selected'; !!}>{{ trans('threads.create.pick_node') }}</option>
                                 @foreach ($sections as $section)
                                     <optgroup label="{{ $section->name }}">
                                         @if(isset($section->nodes))
@@ -47,7 +47,7 @@
                                                               'rows' => 15,
                                                               'style' => "overflow:hidden",
                                                               'id' => 'body_field',
-                                                              'placeholder' => trans('hifone.markdown_support')]) !!}
+                                                              'placeholder' => trans('threads.create.markdown_support')]) !!}
                         </div>
 
                         <div class="form-group">
@@ -59,16 +59,16 @@
                                 @endif
                             </select>
                             <small>
-                                {{ trans('hifone.tags.tags_help') }}
+                                {{ trans('threads.create.tag_help') }}
                             </small>
                         </div>
 
                         <div class="form-group status-post-submit">
-                            {!! Form::submit(trans('forms.publish'), ['class' => 'btn btn-primary col-xs-2', 'id' => 'thread-create-submit']) !!}
+                            {!! Form::submit(trans('threads.create.publish'), ['class' => 'btn btn-primary col-xs-2', 'id' => 'thread-create-submit']) !!}
                             <div class="pull-right">
-                                <small>{!! trans('hifone.photos.drag_drop') !!}</small>
+                                <small>{!! trans('threads.create.drag_drop') !!}</small>
                                 <a href="/markdown" target="_blank"><i
-                                            class="fa fa-lightbulb-o"></i> {{ trans('hifone.photos.markdown_desc') }}
+                                            class="fa fa-lightbulb-o"></i> {{ trans('threads.create.markdown_desc') }}
                                 </a>
                                 </small>
                             </div>
@@ -88,7 +88,7 @@
             @if ( $node )
                 <div class="panel panel-default corner-radius help-box">
                     <div class="panel-heading text-center">
-                        <h3 class="panel-title">{{ trans('hifone.nodes.current') }} : {{ $node->name }}</h3>
+                        <h3 class="panel-title">{{ trans('threads.create.current_node') }} : {{ $node->name }}</h3>
                     </div>
                     <div class="panel-body">
                         {{ $node->description }}
@@ -98,18 +98,18 @@
 
             <div class="panel panel-default corner-radius help-box">
                 <div class="panel-heading text-center">
-                    <h3 class="panel-title">{{ trans('hifone.threads.posting_tips.title') }}</h3>
+                    <h3 class="panel-title">{{ trans('threads.create.tip.title') }}</h3>
                 </div>
                 <div class="panel-body">
                     <ul class="list">
-                        <li>{{ trans('hifone.threads.posting_tips.pt1_title') }}
-                            <p>{{ trans('hifone.threads.posting_tips.pt1_desc') }}</p>
+                        <li>{{ trans('threads.create.tip.1.title') }}
+                            <p>{{ trans('threads.create.tip.1.desc') }}</p>
                         </li>
-                        <li>{{ trans('hifone.threads.posting_tips.pt2_title') }}
-                            <p>{{ trans('hifone.threads.posting_tips.pt2_desc') }}</p>
+                        <li>{{ trans('threads.create.tip.2.title') }}
+                            <p>{{ trans('threads.create.tip.2.desc') }}</p>
                         </li>
-                        <li>{{ trans('hifone.threads.posting_tips.pt3_title') }}
-                            <p>{!! trans('hifone.threads.posting_tips.pt3_desc') !!}</p>
+                        <li>{{ trans('threads.create.tip.3.title') }}
+                            <p>{!! trans('threads.create.tip.3.desc') !!}</p>
                         </li>
                     </ul>
                 </div>
@@ -117,15 +117,15 @@
 
             <div class="panel panel-default corner-radius help-box">
                 <div class="panel-heading text-center">
-                    <h3 class="panel-title">{{ trans('hifone.threads.community_guidelines.title') }}</h3>
+                    <h3 class="panel-title">{{ trans('threads.create.guide.title') }}</h3>
                 </div>
                 <div class="panel-body">
                     <ul class="list">
-                        <li>{{ trans('hifone.threads.community_guidelines.cg1_title') }}
-                            <p>{{ trans('hifone.threads.community_guidelines.cg1_desc') }}</p>
+                        <li>{{ trans('threads.create.guide.1.title') }}
+                            <p>{{ trans('threads.create.guide.1.desc') }}</p>
                         </li>
-                        <li>{{ trans('hifone.threads.community_guidelines.cg2_title') }}
-                            <p>{{ trans('hifone.threads.community_guidelines.cg2_desc') }}</p>
+                        <li>{{ trans('threads.create.guide.2.title') }}
+                            <p>{{ trans('threads.create.guide.2.desc') }}</p>
                         </li>
                     </ul>
                 </div>

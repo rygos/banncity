@@ -66,7 +66,7 @@ class AuthController extends Controller
             ->withCaptcha(route('captcha', ['random' => time()]))
             ->withConnectData(Session::get('connect_data'))
             ->withProviders($providers)
-            ->withPageTitle(trans('hifone.login.login'));
+            ->withPageTitle(trans('ctr.auth.auth.getlogin.login'));
     }
 
     public function landing()
@@ -90,7 +90,7 @@ class AuthController extends Controller
             // instructions if user phrase is good
             return Redirect::to('auth/login')
             ->withInput(Input::except('password'))
-            ->withError(trans('hifone.captcha.failure'));
+            ->withError(trans('ctr.auth.postlogin.failure'));
         }
 
         // Login with username or email.
@@ -108,12 +108,12 @@ class AuthController extends Controller
             }
 
             return Redirect::intended('/')
-                ->withSuccess(sprintf('%s %s', trans('hifone.awesome'), trans('hifone.login.success')));
+                ->withSuccess(sprintf('%s %s', trans('ctr.auth.auth.postlogin.awesome'), trans('ctr.auth.auth.postlogin.success')));
         }
 
         return redirect('/auth/login')
             ->withInput(Input::except('password'))
-            ->withError(trans('hifone.login.invalid'));
+            ->withError(trans('ctr.auth.auth.postlogin.invalid.invalid'));
     }
 
     public function getRegister()
@@ -124,7 +124,7 @@ class AuthController extends Controller
             ->withCaptchaRegisterDisabled(Config::get('setting.captcha_register_disabled'))
             ->withCaptcha(route('captcha', ['random' => time()]))
             ->withConnectData($connect_data)
-            ->withPageTitle(trans('hifone.login.login'));
+            ->withPageTitle(trans('ctr.auth.auth.getregister.login'));
     }
 
     public function postRegister()
@@ -147,16 +147,16 @@ class AuthController extends Controller
             $verifycode = array_pull($registerData, 'verifycode');
             if (! Config::get('setting.captcha_register_disabled') && $verifycode != Session::get('phrase')) {
                 return Redirect::to('auth/register')
-                    ->withTitle(sprintf('%s %s', trans('hifone.whoops'), trans('hifone.users.add.failure')))
+                    ->withTitle(sprintf('%s %s', trans('ctr.auth.auth.postregister.whoops'), trans('ctr.auth.auth.postregister.failure')))
                     ->withInput(Input::all())
-                    ->withErrors([trans('hifone.captcha.failure')]);
+                    ->withErrors([trans('ctr.auth.auth.postregister.captchafailure')]);
             }
         }
         try {
             $user = $this->create($registerData);
         } catch (ValidationException $e) {
             return Redirect::to('auth/register')
-                ->withTitle(sprintf('%s %s', trans('hifone.whoops'), trans('hifone.users.add.failure')))
+                ->withTitle(sprintf('%s %s', trans('ctr.auth.auth.postregister.whoops'), trans('ctr.auth.auth.postregister.failure')))
                 ->withInput(Input::all())
                 ->withErrors($e->getMessageBag());
         }
@@ -231,7 +231,7 @@ class AuthController extends Controller
                 $extern_user = \Socialite::with($slug)->user();
             } catch (InvalidStateException $e) {
                 return Redirect::to('/auth/login')
-                    ->withErrors([trans('hifone.login.oauth.errors.invalidstate')]);
+                    ->withErrors([trans('ctr.auth.auth.callback.invalidstate')]);
             }
 
             //检查是否已经连接过
@@ -250,7 +250,7 @@ class AuthController extends Controller
             }
 
             return Redirect::to('/')
-            ->withSuccess(sprintf('%s %s', trans('hifone.awesome'), trans('hifone.login.success_oauth', ['provider' => $provider->name])));
+            ->withSuccess(sprintf('%s %s', trans('ctr.auth.auth.callback.awesome'), trans('ctr.auth.auth.callback.success', ['provider' => $provider->name])));
         }
     }
 

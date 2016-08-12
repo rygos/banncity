@@ -66,7 +66,7 @@ class HomeController extends Controller
     {
         $feed = app('feed');
         $feed->title = Config::get('setting.site_name');
-        $feed->description = trans('hifone.feed');
+        $feed->description = trans('ctr.home.feed.feed');
         $feed->lang = Config::get('setting.site_locale');
         $feed->link = Str::canonicalize(Config::get('setting.site_domain'));
         $feed->ctype = 'text/xml';

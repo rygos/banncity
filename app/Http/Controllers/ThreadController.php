@@ -104,7 +104,7 @@ class ThreadController extends Controller
         $node = Node::find(Input::query('node_id'));
         $sections = Section::orderBy('order')->get();
 
-        $this->breadcrumb->push(trans('hifone.threads.add'), route('thread.create'));
+        $this->breadcrumb->push(trans('ctr.thread.create.threads.add'), route('thread.create'));
 
         return $this->view('threads.create_edit')
             ->withSections($sections)
@@ -138,7 +138,7 @@ class ThreadController extends Controller
 
 
         return Redirect::route('thread.show', [$thread->id])
-            ->withSuccess(sprintf('%s %s', trans('hifone.awesome'), trans('hifone.success')));
+            ->withSuccess(sprintf('%s %s', trans('ctr.thread.store.awesome'), trans('ctr.thread.store.success')));
     }
 
     /**
@@ -184,7 +184,7 @@ class ThreadController extends Controller
         }
 
         return Redirect::route('thread.show', $thread->id)
-            ->withSuccess(sprintf('%s %s', trans('hifone.awesome'), trans('hifone.success')));
+            ->withSuccess(sprintf('%s %s', trans('ctr.thread.append.awesome'), trans('ctr.thread.append.success')));
     }
 
     /**
@@ -209,7 +209,7 @@ class ThreadController extends Controller
         }
 
         return Redirect::route('thread.show', $thread->id)
-            ->withSuccess(sprintf('%s %s', trans('hifone.awesome'), trans('hifone.success')));
+            ->withSuccess(sprintf('%s %s', trans('ctr.thread.update.awesome'), trans('ctr.thread.update.success')));
     }
 
     /**
@@ -230,7 +230,7 @@ class ThreadController extends Controller
         $thread = dispatch(new UpdateThreadCommand($thread, $updateData));
 
         return Redirect::route('thread.show', $thread->id)
-            ->withSuccess(sprintf('%s %s', trans('hifone.awesome'), trans('hifone.success')));
+            ->withSuccess(sprintf('%s %s', trans('ctr.thread.recommend.awesome'), trans('ctr.thread.recommend.success')));
     }
 
     /**
@@ -277,6 +277,6 @@ class ThreadController extends Controller
         dispatch(new RemoveThreadCommand($thread));
 
         return Redirect::route('thread.index')
-            ->withSuccess(sprintf('%s %s', trans('hifone.awesome'), trans('hifone.success')));
+            ->withSuccess(sprintf('%s %s', trans('ctr.thread.destroy.awesome'), trans('ctr.thread.destroy.success')));
     }
 }

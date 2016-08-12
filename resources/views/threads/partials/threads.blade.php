@@ -67,7 +67,7 @@
                 <span class="timeago {{ $thread->highlight }}" data-toggle="tooltip" data-placement="top" title="{{ $thread->created_at }}">{{ $thread->created_at }}</span>
             @endif
             @if ($thread->reply_count > 0 && count($thread->lastReplyUser))
-                <span>{{ trans('hifone.threads.last_reply_by') }}</span>
+                <span>{{ trans('threads.partials.threads.last_reply_by') }}</span>
                 <a href="{{ route('user.home', [$thread->lastReplyUser->username]) }}">
                   {{ $thread->lastReplyUser->username }}
                 </a>
@@ -83,5 +83,5 @@
 </ul>
 
 @else
-   <div class="empty-block">{{ trans('hifone.noitem') }}</div>
+   <div class="empty-block">{{ trans('threads.partials.threads.noitem') }}</div>
 @endif

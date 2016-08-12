@@ -111,7 +111,7 @@ class InstallController extends Controller
 
         return $this->view('install.index')
             ->withCacheDrivers($this->cacheDrivers)
-            ->withPageTitle(trans('install.title'))
+            ->withPageTitle(trans('ctr.install.title'))
             ->withEnvCheck($this->verify())
             ->withUserLanguage($userLanguage)
             ->withSiteUrl(Request::root());
@@ -186,11 +186,11 @@ class InstallController extends Controller
             // Create Roles
             $founder = new Role();
             $founder->name = 'Founder';
-            $founder->display_name = trans('install.role_founder');
+            $founder->display_name = trans('ctr.install.role_founder');
             $founder->save();
             $admin = new Role();
             $admin->name = 'Admin';
-            $admin->display_name = trans('install.role_admin');
+            $admin->display_name = trans('ctr.install.role_admin');
             $admin->save();
 
             $userDetails['salt'] = str_random(16);

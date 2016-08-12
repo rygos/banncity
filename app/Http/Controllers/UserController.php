@@ -91,7 +91,7 @@ class UserController extends Controller
         }
 
         return Redirect::route('user.edit', $user->id)
-            ->withSuccess(sprintf('%s %s', trans('hifone.awesome'), trans('hifone.success')));
+            ->withSuccess(sprintf('%s %s', trans('ctr.user.update.awesome'), trans('ctr.user.update.success')));
     }
 
     public function destroy(User $user)
@@ -161,7 +161,7 @@ class UserController extends Controller
         $record ? $record->delete() : null;
 
         return Redirect::route('user.edit', $user->id)
-            ->withSuccess(trans('hifone.login.oauth.unbound_success'));
+            ->withSuccess(trans('ctr.user.unbind.unbound_success'));
     }
 
     public function avatarupdate()
@@ -189,7 +189,7 @@ class UserController extends Controller
         $user->save();
 
         return Redirect::back()
-            ->withSuccess(trans('hifone.users.avatar_upload_success'));
+            ->withSuccess(trans('ctr.user.avatarupdate.avatar_upload_success'));
     }
 
     protected function resetPassword()

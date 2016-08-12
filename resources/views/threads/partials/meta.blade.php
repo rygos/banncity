@@ -16,11 +16,11 @@
     <span class="label label-warning" style="position: relative;">{{ $thread->user->badgeName }}</span>
   @endif
   •
-  {{ trans('hifone.at') }} <abbr title="{{ $thread->created_at }}" class="timeago">{{ $thread->created_at }}</abbr>
+  {{ trans('threads.partials.meta.at') }} <abbr title="{{ $thread->created_at }}" class="timeago">{{ $thread->created_at }}</abbr>
   •
 
   @if (count($thread->lastReplyUser))
-    {{ trans('hifone.threads.last_reply_by') }}
+    {{ trans('threads.partials.meta.last_reply_by') }}
       <a href="{{ route('user.home', [$thread->lastReplyUser->username]) }}">
         @if($thread->lastReplyUser->nickname)
           {{ $thread->lastReplyUser->nickname }}
@@ -28,10 +28,10 @@
           {{ $thread->lastReplyUser->username }}
         @endif
       </a>
-     {{ trans('hifone.at') }} <abbr title="{{ $thread->updated_at }}" class="timeago">{{ $thread->updated_at }}</abbr>
+     {{ trans('threads.partials.meta.at') }} <abbr title="{{ $thread->updated_at }}" class="timeago">{{ $thread->updated_at }}</abbr>
     •
   @endif
 
-  {{ $thread->view_count }} {{ trans('hifone.view_count') }}
+  {{ $thread->view_count }} {{ trans('threads.partials.meta.view_count') }}
 </div>
 <div class="clearfix"></div>

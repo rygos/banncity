@@ -89,7 +89,7 @@ class PmController extends Controller
         if (! $recipient) {
             return Redirect::route('pm.create')
                 ->withInput(Input::all())
-                ->withErrors([trans('hifone.pms.recipient_error')]);
+                ->withErrors([trans('ctr.pm.store.recipient_error')]);
         }
 
         try {
@@ -105,7 +105,7 @@ class PmController extends Controller
         }
 
         return Redirect::route('pm.index')
-            ->withSuccess(sprintf('%s %s', trans('hifone.awesome'), trans('hifone.success')));
+            ->withSuccess(sprintf('%s %s', trans('ctr.pm.store.awesome'), trans('ctr.pm.store.success')));
     }
 
     protected function inbox($userId)

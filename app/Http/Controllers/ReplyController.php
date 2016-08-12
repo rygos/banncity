@@ -50,7 +50,7 @@ class ReplyController extends Controller
         }
 
         return Redirect::route('thread.show', [$reply->thread_id])
-            ->withSuccess(sprintf('%s %s', trans('hifone.awesome'), trans('hifone.success')));
+            ->withSuccess(sprintf('%s %s', trans('ctr.reply.store.awesome'), trans('ctr.reply.store.success')));
     }
 
     public function destroy(Reply $reply)
@@ -60,6 +60,6 @@ class ReplyController extends Controller
         dispatch(new RemoveReplyCommand($reply));
 
         return Redirect::route('thread.show', $reply->thread_id)
-            ->withSuccess(sprintf('%s %s', trans('hifone.awesome'), trans('hifone.success')));
+            ->withSuccess(sprintf('%s %s', trans('ctr.reply.destroy.awesome'), trans('ctr.reply.destroy.success')));
     }
 }
