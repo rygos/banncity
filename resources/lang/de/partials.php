@@ -1,13 +1,21 @@
 <?php
 
-return array (
-  'captcha' => 
-  array (
+/*
+ * This file is part of Hifone.
+ *
+ * (c) until 2016-08-11 Hifone.com <hifone@hifone.com>
+ * (c) changes made after 2016-08-11 banncity.de <broxxer@broxxer.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+return  [
+  'captcha' =>  [
     'captcha' => 'Captcha',
     'refresh' => 'Neues Captcha laden',
-  ),
-  'nav' => 
-  array (
+  ],
+  'nav' =>  [
     'home' => 'Home',
     'threads' => 'Threads',
     'excellent' => 'Bemerkenswert',
@@ -21,9 +29,8 @@ return array (
     'dashboard' => 'Dashboard',
     'signup' => 'Registrieren',
     'login' => 'Anmelden',
-  ),
-  'sidebar' => 
-  array (
+  ],
+  'sidebar' =>  [
     'thread_add' => 'Thread hinzufügen',
     'pms_title' => 'Persönliche Nachrichten',
     'pms_create' => 'Nachricht erstellen',
@@ -40,5 +47,5 @@ return array (
     'stats_users' => 'Benutzer',
     'stats_threads' => 'Threads',
     'stats_replies' => 'Antworten',
-  ),
-);
+  ],
+];

@@ -10,7 +10,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Hifone\Events\Thread;
 
 use Hifone\Events\EventInterface;
